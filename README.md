@@ -1,29 +1,19 @@
-# client
+# Backend
 
-## Project setup
+Node and websocket
+
 ```
+cd ./server
 npm install
+node ./index.js
 ```
 
-### Compiles and hot-reloads for development
+# Frontend
+
+VueJs
+
 ```
+cd ./client
+npm install
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

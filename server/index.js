@@ -39,7 +39,7 @@
           let newMsg = {
             name: 'system',
             time: timestamp(),
-            text: `В чат зашёл новый пользователь с именем <b>${userName}</b>.`
+            text: `В чат зашёл пользователь с именем <b>${userName}</b>.`
           }
           data.users.push(userName)
           data.history.push(newMsg)
@@ -51,13 +51,19 @@
             time: timestamp(),
             text: `<b>${userName}</b> сменил имя на <b>${msg.name}</b>.`
           }
+          deleteName(data, userName)
           userName = msg.name
           data.users.push(userName)
           data.history.push(updateMsg)
           break
         // User send message
         case 'message':
-          data.history.push(msg)
+          let commonMsg = {
+            name: userName,
+            time: timestamp(),
+            text: msg.text
+          }
+          data.history.push(commonMsg)
           break
       }
 
@@ -75,10 +81,7 @@
         text: `<b>${userName}</b> покинул чат.`
       }
 
-      let index = data.users.indexOf(userName)
-      if (index > -1) {
-        data.users.splice(index, 1)
-      }
+      deleteName(data, userName)
 
       data.history.push(outMsg)
       wss.broadcast(data)
@@ -100,6 +103,13 @@
     })
   }
 
+  function deleteName (data, name) {
+    let index = data.users.indexOf(name)
+    if (index > -1) {
+      data.users.splice(index, 1)
+    }
+  }
+
   function timestamp () {
     let d = new Date()
     let day = format(d.getDate())
@@ -114,7 +124,7 @@
   }
 
   function format(n) {
-    if (n.length < 2) {
+    if (n.toString().length < 2) {
       n = '0' + n
     }
     return n

@@ -36,12 +36,16 @@ export default {
 
 <style lang="scss">
   header.template {
+    position: relative;
+    z-index: 10;
+
     display: flex;
     flex-direction: row;
     align-items: center;
 
     height: 10vh;
-    border-bottom: 1px solid #000;
+    background: #FF0054;
+    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
 
     .avatar {
       width: 8vh;

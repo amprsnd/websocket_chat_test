@@ -56,7 +56,9 @@ export default {
       height: 80vh;
       overflow: hidden;
       box-sizing: border-box;
-      padding-left: 1rem;
+      padding: 1rem 0 0 1rem;
+      background: url('/images/bg.jpg') 50% 50% no-repeat;
+      background-size: cover;
     }
     .form {
       height: 10vh;

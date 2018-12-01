@@ -28,10 +28,14 @@ export default {
 
 <style lang="scss">
  aside.template {
+  position: relative;
+  z-index: 9;
+
   min-width: 10rem;
   box-sizing: border-box;
 
   border-right: 1px solid black;
+  box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
 
   ul {
     padding: 1rem;

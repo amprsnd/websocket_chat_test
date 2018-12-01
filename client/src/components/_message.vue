@@ -1,13 +1,13 @@
 <template>
   <div class="one-message">
   <template v-if="message.name === 'system'">
-    <div class="system" v-html="message.text"></div>
+    <div class="system" v-html="`<span>${message.text}</span>`"></div>
   </template>
   <template v-else>
     <div :class="[message.name === store.userName ? 'iAm' : '', 'user']">
       <div class="bubble">
         <span class="name" v-if="message.name !== store.userName">{{message.name}}</span>
-        <span class="time">{{message.time}}</span>
+        <span class="time" v-html="timestamp"></span>
         <div class="text">{{message.text}}</div>
       </div>
     </div>
@@ -25,6 +25,11 @@ export default {
     return {
       store: store
     }
+  },
+  computed: {
+    timestamp: function () {
+      return this.message.time.replace(' ', '&nbsp;')
+    }
   }
 }
 </script>
@@ -38,6 +43,13 @@ export default {
     color: #777;
     text-align: center;
 
+    span {
+      display: inline-block;
+      background: #fff;
+      padding: 5px 10px;
+      border-radius: 20px;
+    
+    }
     b {font-weight: 700;}
   }
 

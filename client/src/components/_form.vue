@@ -8,7 +8,7 @@
     />
     <button @click="send()" :class="{active : this.store.message.text.length > 0}">
       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24">
-        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="#000"/>
         <path d="M0 0h24v24H0z" fill="none"/>
       </svg>
     </button>
@@ -31,6 +31,7 @@ export default {
         this.store.message.type = 'message'
         this.store.ws.send(JSON.stringify(this.store.message))
         this.store.message.text = ''
+        this.store.mobileMessage = false
       }
     }
   }
@@ -63,18 +64,40 @@ export default {
       outline: none;
       border: none;
 
-      background: #fff;
-      opacity: .3;
-      transition: opacity 200ms ease-out;
+      background: #21897E;
 
       &.active {
-        opacity: 1;
         cursor: pointer;
+
+        svg {
+          opacity: 1;
+        }
       }
 
       svg {
+        transition: opacity 200ms ease-out;
         margin: 0;
+        opacity: .4;
       }
+    }
+  }
+
+  @media only screen
+  and (max-device-width: 768px) {
+    .input {
+      flex-direction: column;
+      border: none;
+
+      input {
+        height: 50%;
+        border: 1px solid #000;
+      }
+
+      button {
+        width: 100%;
+        height: 50%;
+      }
+
     }
   }
 </style>

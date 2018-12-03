@@ -44,18 +44,20 @@ export default {
     align-items: center;
 
     height: 10vh;
-    background: #FF0054;
+    background: #8860D0;
     box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
 
     .avatar {
       width: 8vh;
       height: 8vh;
       line-height: 8vh;
-      background: #999;
       text-align: center;
       border-radius: 50%;
       font-size: 2.5rem;
       margin: 1rem;
+
+      background: #242038;
+      color: #fff;
     }
 
     .name {
@@ -69,6 +71,34 @@ export default {
       outline: none;
       cursor: pointer;
     }
+  }
 
+  @media only screen
+  and (max-device-width: 768px) {
+    header.template {
+
+      height: 5rem;
+      background: #8860D0;
+      box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+
+      .name {
+        font-size: 1rem;
+      }
+
+      .avatar {
+        font-size: 1rem;
+        width: 2rem !important;
+        height: 2rem !important;
+        line-height: 2rem !important;
+      }
+    }
+  }
+
+  @media only screen
+  and (max-device-width: 768px)
+  and (orientation: landscape) {
+    header.template {
+      height: 3rem;
+    }
   }
 </style>

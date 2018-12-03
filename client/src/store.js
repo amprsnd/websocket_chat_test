@@ -1,5 +1,5 @@
 export default {
-  server: 'ws://localhost:3000',
+  server: 'ws://172.21.4.6:3000',
   ws: null,
   userName: '',
   usersList: [],
@@ -11,8 +11,8 @@ export default {
   },
   scroll: {
     rail: {
-      background: '#777',
-      opacity: 0.3,
+      background: '#fff',
+      opacity: 0.5,
       size: '6px',
       specifyBorderRadius: false,
       gutterOfEnds: '2px',
@@ -23,10 +23,12 @@ export default {
       showDelay: 500,
       onlyShowBarOnScroll: true,
       keepShow: false,
-      background: '#777',
+      background: '#84CEEB',
       opacity: 1,
       hoverStyle: false,
       specifyBorderRadius: false
     }
-  }
+  },
+  mobileUsers: false,
+  mobileMessage: false
 }

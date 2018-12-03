@@ -5,7 +5,7 @@
         <message  v-for="(message, index) in store.history" :key="index" :message="message" />
       </vue-scroll>
     </div>
-    <div class="form">
+    <div :class="[store.mobileMessage ? 'mobile-show': 'mobile-hide', 'form']">
       <message-form />
     </div>
   </section>
@@ -56,12 +56,41 @@ export default {
       height: 80vh;
       overflow: hidden;
       box-sizing: border-box;
-      padding: 1rem 0 0 1rem;
+      padding-left: 1rem;
       background: url('/images/bg.jpg') 50% 50% no-repeat;
       background-size: cover;
     }
     .form {
       height: 10vh;
+    }
+  }
+
+  @media only screen
+  and (max-device-width: 768px) {
+    .messages {
+      height: calc(100vh - 3rem);
+      padding: 0 0 5rem 0;
+    }
+    .form {
+      position: absolute;
+      z-index: 5;
+      width: 80%;
+      height: 10rem !important;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
+
+      box-sizing: border-box;
+      padding: 1rem;
+
+      &.mobile-hide {
+        display: none;
+      }
+      &.mobile-show {
+        display: block;
+      }
     }
   }
 

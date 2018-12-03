@@ -4,6 +4,7 @@
     <div class="chat">
       <sidebar-component />
       <section-component />
+      <mobile />
     </div>
   </div>
 </template>
@@ -15,13 +16,15 @@ import store from './store.js'
 import headerComponent from './components/header'
 import sidebarComponent from './components/sidebar'
 import sectionComponent from './components/section'
+import mobile from './components/_mobile'
 
 export default {
   name: 'app',
   components: {
     headerComponent,
     sidebarComponent,
-    sectionComponent
+    sectionComponent,
+    mobile
   },
   data: function () {
     return {
@@ -90,6 +93,7 @@ export default {
     margin: 0 auto;
     overflow: hidden;
 
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
 
@@ -101,6 +105,32 @@ export default {
   .chat {
     display: flex;
     flex-direction: row;
+  }
+
+  // Adaptive
+  // and (orientation: landscape)
+  // and (orientation: portrait)
+
+  @media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px) {
+    #app {
+      width: 100%;
+      height: 80%;
+    }
+  }
+
+  @media only screen
+  and (max-device-width: 768px) {
+
+    #app {
+      border: none;
+    }
+    .chat {
+      display: flex;
+      flex-direction: column;
+    }
+
   }
 
 </style>

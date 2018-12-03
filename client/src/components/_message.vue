@@ -36,7 +36,7 @@ export default {
 
 <style lang="scss">
   .one-message {
-    margin: .25rem;
+    margin: 1rem .25rem .25rem .25rem;
   }
   .system {
     font-size: .75rem;
@@ -48,7 +48,7 @@ export default {
       background: #fff;
       padding: 5px 10px;
       border-radius: 20px;
-    
+      box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
     }
     b {font-weight: 700;}
   }
@@ -63,7 +63,8 @@ export default {
       padding: 1rem;
       border-radius: 1rem;
       border-bottom-left-radius: 0;
-      background: #777;
+      background: #5560E9;
+      box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
 
       .name {
         font-size: .8rem;
@@ -84,8 +85,7 @@ export default {
       text-align: right;
 
       .bubble {
-        background: #fff;
-        border: 1px solid #777;
+        background: #84CEEB;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 0;
 

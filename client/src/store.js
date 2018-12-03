@@ -1,5 +1,5 @@
 export default {
-  server: 'ws://172.21.4.6:3000',
+  server: 'ws://localhost:3000',
   ws: null,
   userName: '',
   usersList: [],

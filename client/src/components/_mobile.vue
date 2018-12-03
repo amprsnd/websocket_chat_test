@@ -20,18 +20,18 @@ import store from '../store.js'
 
 export default {
   name: 'mobile',
-  data() {
+  data () {
     return {
       store: store
     }
   },
   methods: {
-    showForm() {
+    showForm () {
       this.store.mobileMessage = !this.store.mobileMessage
     },
-    showUsers() {
+    showUsers () {
       this.store.mobileUsers = !this.store.mobileUsers
-    } 
+    }
   }
 }
 </script>
@@ -53,7 +53,7 @@ export default {
       vertical-align: middle;
       background: #21897E;
       box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
-      
+
       svg {
         margin: 0 auto;
       }

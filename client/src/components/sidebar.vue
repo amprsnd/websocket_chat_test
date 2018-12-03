@@ -52,7 +52,7 @@ export default {
       height: 100%;
       min-width: auto !important;
       border: none;
-      
+
       transition: left 200ms ease-in-out;
 
       &.mobile-hide {

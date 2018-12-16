@@ -81,23 +81,4 @@ export default {
       }
     }
   }
-
-  @media only screen
-  and (max-device-width: 768px) {
-    .input {
-      flex-direction: column;
-      border: none;
-
-      input {
-        height: 50%;
-        border: 1px solid #000;
-      }
-
-      button {
-        width: 100%;
-        height: 50%;
-      }
-
-    }
-  }
 </style>

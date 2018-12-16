@@ -1,10 +1,8 @@
 <template>
-  <aside :class="[store.mobileUsers ? 'mobile-show': 'mobile-hide', 'template']">
-    <vue-scroll :ops="store.scroll">
-      <ul>
-        <user v-for="(user, index) in store.usersList" :key="index" :user="user" />
-      </ul>
-    </vue-scroll>
+  <aside class="template">
+    <ul>
+      <user v-for="(user, index) in store.usersList" :key="index" :user="user" />
+    </ul>
   </aside>
 </template>
 
@@ -42,29 +40,4 @@ export default {
     padding: 1rem;
   }
  }
-
-  @media only screen
-  and (max-device-width: 768px) {
-    aside.template {
-      position: absolute;
-      z-index: 7;
-      width: auto;
-      height: 100%;
-      min-width: auto !important;
-      border: none;
-
-      transition: left 200ms ease-in-out;
-
-      &.mobile-hide {
-        left: -100%;
-      }
-
-      &.mobile-show {
-        left: 0%;
-      }
-
-    }
-
-  }
-
 </style>

@@ -34,9 +34,6 @@ export default {
     border-radius: 50%;
     font-size: 1rem;
     margin: 0 1rem .5rem 0;
-
-    background: #242038;
-    color: #fff;
   }
   li {
     &.iAm {

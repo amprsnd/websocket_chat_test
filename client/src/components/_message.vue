@@ -63,7 +63,6 @@ export default {
       padding: 1rem;
       border-radius: 1rem;
       border-bottom-left-radius: 0;
-      background: #5560E9;
       box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
 
       .name {
@@ -85,7 +84,6 @@ export default {
       text-align: right;
 
       .bubble {
-        background: #84CEEB;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 0;
 

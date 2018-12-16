@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import vuescroll from 'vuescroll'
-import 'vuescroll/dist/vuescroll.css'
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.min.css'
 
 import App from './App.vue'
 
-Vue.use(vuescroll)
+Vue.use(VueMaterial)
 
 Vue.config.productionTip = false
 

@@ -4,7 +4,6 @@
     <div class="chat">
       <sidebar-component />
       <section-component />
-      <mobile />
     </div>
   </div>
 </template>
@@ -16,15 +15,13 @@ import store from './store.js'
 import headerComponent from './components/header'
 import sidebarComponent from './components/sidebar'
 import sectionComponent from './components/section'
-import mobile from './components/_mobile'
 
 export default {
   name: 'app',
   components: {
     headerComponent,
     sidebarComponent,
-    sectionComponent,
-    mobile
+    sectionComponent
   },
   data: function () {
     return {
@@ -76,7 +73,8 @@ export default {
 </script>
 
 <style lang="scss">
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=cyrillic');
+  // @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=cyrillic');
+  @import url('//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons');
   @import 'reset-css';
 
   body {
@@ -105,32 +103,6 @@ export default {
   .chat {
     display: flex;
     flex-direction: row;
-  }
-
-  // Adaptive
-  // and (orientation: landscape)
-  // and (orientation: portrait)
-
-  @media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px) {
-    #app {
-      width: 100%;
-      height: 80%;
-    }
-  }
-
-  @media only screen
-  and (max-device-width: 768px) {
-
-    #app {
-      border: none;
-    }
-    .chat {
-      display: flex;
-      flex-direction: column;
-    }
-
   }
 
 </style>

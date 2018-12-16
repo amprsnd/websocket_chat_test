@@ -1,11 +1,9 @@
 <template>
   <section>
     <div class="messages">
-      <vue-scroll :ops="store.scroll" ref="messages">
-        <message  v-for="(message, index) in store.history" :key="index" :message="message" />
-      </vue-scroll>
+      <message  v-for="(message, index) in store.history" :key="index" :message="message" />
     </div>
-    <div :class="[store.mobileMessage ? 'mobile-show': 'mobile-hide', 'form']">
+    <div class="form">
       <message-form />
     </div>
   </section>
@@ -57,8 +55,6 @@ export default {
       overflow: hidden;
       box-sizing: border-box;
       padding-left: 1rem;
-      background: url('/images/bg.jpg') 50% 50% no-repeat;
-      background-size: cover;
     }
     .form {
       height: 10vh;

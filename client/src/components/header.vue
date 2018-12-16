@@ -44,7 +44,6 @@ export default {
     align-items: center;
 
     height: 10vh;
-    background: #8860D0;
     box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
 
     .avatar {
@@ -55,9 +54,6 @@ export default {
       border-radius: 50%;
       font-size: 2.5rem;
       margin: 1rem;
-
-      background: #242038;
-      color: #fff;
     }
 
     .name {
@@ -91,14 +87,6 @@ export default {
         height: 2rem !important;
         line-height: 2rem !important;
       }
-    }
-  }
-
-  @media only screen
-  and (max-device-width: 768px)
-  and (orientation: landscape) {
-    header.template {
-      height: 3rem;
     }
   }
 </style>

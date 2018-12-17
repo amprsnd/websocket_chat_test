@@ -40,15 +40,14 @@ export default {
   }
   .system {
     font-size: .75rem;
-    color: #777;
+    color: #448aff;
     text-align: center;
 
     span {
       display: inline-block;
       background: #fff;
-      padding: 5px 10px;
-      border-radius: 20px;
-      box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
+      padding: 5px;
+      box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.4);
     }
     b {font-weight: 700;}
   }
@@ -64,6 +63,8 @@ export default {
       border-radius: 1rem;
       border-bottom-left-radius: 0;
       box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
+      background: #448aff;
+      color: #fff;
 
       .name {
         font-size: .8rem;
@@ -86,7 +87,7 @@ export default {
       .bubble {
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 0;
-
+        background: #ff5252;
         text-align: left;
       }
     }

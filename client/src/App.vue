@@ -1,10 +1,32 @@
 <template>
-  <div id="app">
-    <header-component />
-    <div class="chat">
-      <sidebar-component />
-      <section-component />
-    </div>
+  <div id="app" class="page-container md-elevation-5">
+    <md-app md-waterfall md-mode="fixed">
+      <md-app-toolbar class="md-primary md-elevation-5">
+        <span class="md-title" style="flex: 1;">Chat App</span>
+        <div class="userInfo">
+          <span>{{store.userName}}</span>
+          <md-avatar class="md-avatar-icon md-accent">
+            <md-icon>person</md-icon>
+          </md-avatar>
+        </div>
+      </md-app-toolbar>
+
+      <md-app-drawer class="md-elevation-7" md-permanent="clipped">
+        <md-toolbar class="md-transparent" md-elevation="0">
+          Users list
+        </md-toolbar>
+
+        <md-list>
+          <user v-for="(user, index) in store.usersList" :key="index" :user="user" />
+        </md-list>
+      </md-app-drawer>
+
+      <md-app-content class="messages">
+        <message v-for="(message, index) in store.history" :key="index" :message="message" />
+        <message-form />
+        <div id="lastMessage"></div>
+      </md-app-content>
+    </md-app>
   </div>
 </template>
 
@@ -12,20 +34,26 @@
 import Faker from 'faker'
 import store from './store.js'
 
-import headerComponent from './components/header'
-import sidebarComponent from './components/sidebar'
-import sectionComponent from './components/section'
+import user from './components/_user'
+import message from './components/_message'
+import messageForm from './components/_form'
 
 export default {
   name: 'app',
   components: {
-    headerComponent,
-    sidebarComponent,
-    sectionComponent
+    user,
+    message,
+    messageForm
   },
   data: function () {
     return {
-      store: store
+      store: store,
+      menuVisible: false
+    }
+  },
+  watch: {
+    'store.history': function () {
+      this.scrollToLastMessage()
     }
   },
   mounted: function () {
@@ -47,6 +75,7 @@ export default {
         let data = JSON.parse(event.data)
         this.store.usersList = data.users
         this.store.history = data.history
+        this.scrollToLastMessage()
       }
 
       this.store.ws.onclose = (event) => {
@@ -67,18 +96,21 @@ export default {
       }
       this.store.userName = localStorage.getItem('userName')
       return this.store.userName
+    },
+    scrollToLastMessage: function () {
+      location.hash = 'lastMessage'
+      location.hash = ''
     }
   }
 }
 </script>
 
 <style lang="scss">
-  // @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=cyrillic');
   @import url('//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons');
   @import 'reset-css';
 
   body {
-    overflow: hidden;
+    // overflow: hidden;
     font-size: 16px;
   }
 
@@ -87,22 +119,35 @@ export default {
     width: 100%;
     max-width: 1200px;
     min-width: 340px;
-    height: 100%;
     margin: 0 auto;
-    overflow: hidden;
 
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+    .md-app {
+      height: 100vh;
+    }
 
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    .userInfo {
+      span {
+        vertical-align: middle;
+        margin-right: 1rem;
+      }
+    }
+
+    .messages {
+      height: auto !important;
+      background: url('/images/bg2.jpg') 50% 50% no-repeat fixed;
+      background-size: cover;
+      min-height: 100%;
+      overflow: hidden;
+    }
+
+    #lastMessage {
+      height: 72px;
+      position: relative;
+      top: 36px;
+    }
+
+    .md-drawer {
+      width: auto;
+    }
   }
-
-  .chat {
-    display: flex;
-    flex-direction: row;
-  }
-
 </style>

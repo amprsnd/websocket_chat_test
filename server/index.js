@@ -9,7 +9,7 @@
     },
     client: {
       protocol: 'http',
-      host: 'localhost',
+      host: '192.168.1.7',
       port: 8080
     },
     historyLength: 100
@@ -49,10 +49,10 @@
           let updateMsg = {
             name: 'system',
             time: timestamp(),
-            text: `<b>${userName}</b> сменил имя на <b>${msg.name}</b>.`
+            text: `<b>${userName}</b> сменил имя на <b>${msg.text}</b>.`
           }
           deleteName(data, userName)
-          userName = msg.name
+          userName = msg.text
           data.users.push(userName)
           data.history.push(updateMsg)
           break

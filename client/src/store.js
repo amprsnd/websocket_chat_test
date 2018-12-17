@@ -1,5 +1,5 @@
 export default {
-  server: 'ws://localhost:3000',
+  server: 'ws://192.168.1.7:3000',
   ws: null,
   userName: '',
   usersList: [],
@@ -8,27 +8,5 @@ export default {
     type: '', // new update message
     name: '',
     text: ''
-  },
-  scroll: {
-    rail: {
-      background: '#fff',
-      opacity: 0.5,
-      size: '6px',
-      specifyBorderRadius: false,
-      gutterOfEnds: '2px',
-      gutterOfSide: '2px',
-      keepShow: false
-    },
-    bar: {
-      showDelay: 500,
-      onlyShowBarOnScroll: true,
-      keepShow: false,
-      background: '#84CEEB',
-      opacity: 1,
-      hoverStyle: false,
-      specifyBorderRadius: false
-    }
-  },
-  mobileUsers: false,
-  mobileMessage: false
+  }
 }

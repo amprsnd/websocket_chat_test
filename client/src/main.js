@@ -1,10 +1,13 @@
 import Vue from 'vue'
-import vuescroll from 'vuescroll'
-import 'vuescroll/dist/vuescroll.css'
+import VeeValidate from 'vee-validate'
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.min.css'
+import 'vue-material/dist/theme/default.css'
 
 import App from './App.vue'
 
-Vue.use(vuescroll)
+Vue.use(VeeValidate)
+Vue.use(VueMaterial)
 
 Vue.config.productionTip = false
 

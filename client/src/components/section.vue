@@ -36,7 +36,8 @@ export default {
   },
   methods: {
     scrollChat () {
-      this.$refs['messages'].scrollTo({ y: '120%' })
+      // TODO: add scroll
+      // this.$refs['messages'].scrollTo({ y: '120%' })
     }
   }
 }
@@ -60,34 +61,4 @@ export default {
       height: 10vh;
     }
   }
-
-  @media only screen
-  and (max-device-width: 768px) {
-    .messages {
-      height: calc(100vh - 3rem);
-      padding: 0 0 5rem 0;
-    }
-    .form {
-      position: absolute;
-      z-index: 5;
-      width: 80%;
-      height: 10rem !important;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background: #fff;
-      box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
-
-      box-sizing: border-box;
-      padding: 1rem;
-
-      &.mobile-hide {
-        display: none;
-      }
-      &.mobile-show {
-        display: block;
-      }
-    }
-  }
-
 </style>

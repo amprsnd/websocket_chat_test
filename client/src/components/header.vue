@@ -68,25 +68,4 @@ export default {
       cursor: pointer;
     }
   }
-
-  @media only screen
-  and (max-device-width: 768px) {
-    header.template {
-
-      height: 5rem;
-      background: #8860D0;
-      box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
-
-      .name {
-        font-size: 1rem;
-      }
-
-      .avatar {
-        font-size: 1rem;
-        width: 2rem !important;
-        height: 2rem !important;
-        line-height: 2rem !important;
-      }
-    }
-  }
 </style>
